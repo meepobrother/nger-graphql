@@ -1,6 +1,6 @@
 import { isEmpty } from '@nestjs/common/utils/shared.utils';
 import { gql } from 'apollo-server-core';
-import { makeExecutableSchema } from 'graphql-tools';
+import { makeExecutableSchema, makeRemoteExecutableSchema } from 'graphql-tools';
 import * as chokidar from 'chokidar';
 import { printSchema } from 'graphql';
 import { GraphQLAstExplorer } from './graphql-ast.explorer';

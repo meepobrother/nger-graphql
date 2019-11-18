@@ -1,0 +1,16 @@
+{
+	"name": "root",
+	"private": true,
+	"scripts": {
+		"start": "ts-node -r tsconfig-paths/register packages/core/__tests__/core.test.ts"
+	},
+	"devDependencies": {
+		"lerna": "^3.13.1"
+	},
+	"dependencies": {
+		"jsonwebtoken": "^8.5.1",
+		"ts-node": "^8.5.2",
+		"tsconfig-paths": "^3.9.0",
+		"typescript": "^3.7.2"
+	}
+}
