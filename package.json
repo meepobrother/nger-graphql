@@ -2,12 +2,13 @@
 	"name": "root",
 	"private": true,
 	"scripts": {
-		"start": "ts-node -r tsconfig-paths/register packages/core/__tests__/core.test.ts"
+		"start": "ts-node -r tsconfig-paths/register packages/core/__tests__/core/index.ts"
 	},
 	"devDependencies": {
 		"lerna": "^3.13.1"
 	},
 	"dependencies": {
+		"@notadd/magnus-typeorm": "^0.8.20",
 		"jsonwebtoken": "^8.5.1",
 		"ts-node": "^8.5.2",
 		"tsconfig-paths": "^3.9.0",
