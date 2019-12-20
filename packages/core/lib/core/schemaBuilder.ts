@@ -1,5 +1,5 @@
 import { GraphQLSchema } from 'graphql';
 export abstract class SchemaBuilder {
-    abstract buildSchema(): GraphQLSchema;
-    abstract buildRoot<T>(): T;
+    abstract buildSchema(): Promise<GraphQLSchema>;
+    abstract buildRoot<T>(): Promise<T>;
 }

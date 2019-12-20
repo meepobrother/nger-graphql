@@ -1,6 +1,6 @@
 {
-    "name": "@nger/graphql",
-    "version": "1.0.5",
+    "name": "@nger/graphql.pg",
+    "version": "1.0.0",
     "description": "> TODO: description",
     "author": "imeepos <1037483576@qq.com>",
     "homepage": "https://github.com/meepobrother/nger-graphql#readme",
@@ -15,7 +15,8 @@
         "lib"
     ],
     "publishConfig": {
-        "registry": "http://registry.npmjs.org"
+        "registry": "http://registry.npmjs.org/",
+        "access": "public"
     },
     "repository": {
         "type": "git",
@@ -28,7 +29,13 @@
         "url": "https://github.com/meepobrother/nger-graphql/issues"
     },
     "dependencies": {
-        "@nger/core": "^1.8.9",
-        "graphql": "^14.5.8"
+        "@nger/core": "^1.8.7",
+        "@nger/graphql": "^1.0.5",
+        "@nger/orm.core": "^1.1.1",
+        "@nger/orm.postgres": "^1.1.4",
+        "graphile-build-pg": "^4.5.3",
+        "graphile-utils": "^4.5.6",
+        "graphqlviz": "^3.1.0",
+        "postgraphile-core": "^4.5.3"
     }
 }

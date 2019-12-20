@@ -10,9 +10,6 @@ export class GraphqlController {
     @Post(`/`)
     handler(
         @Body({
-            property: `operationName`
-        }) operationName: string | null, // 方法名
-        @Body({
             property: `query`
         }) query: string, // graphql
         @Body({
@@ -20,6 +17,6 @@ export class GraphqlController {
         }) variables: any // 变量
     ) {
         const graphqlService = this.injector.get(GraphqlService)
-        return graphqlService.run(query, variables, operationName)
+        return graphqlService.run(query, variables)
     }
 }

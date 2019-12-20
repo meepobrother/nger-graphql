@@ -63,15 +63,14 @@ export interface IResolvers<TSource = any, TContext = any> {
 @Injectable()
 export class GraphqlService {
     constructor(private schemaBuilder: SchemaBuilder, private injector: Injector) { }
-    run(query: string, variables: any = {}, operationName?: string | null) {
-        const schema = this.schemaBuilder.buildSchema();
+    async run(query: string, variables: any = {}) {
+        const schema = await this.schemaBuilder.buildSchema();
         return graphql({
             schema,
             source: query,
-            rootValue: this.schemaBuilder.buildRoot(),
+            rootValue: await this.schemaBuilder.buildRoot(),
             contextValue: this.injector,
-            variableValues: variables,
-            operationName: operationName
+            variableValues: variables
         });
     }
 }
