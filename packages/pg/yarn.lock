@@ -12,7 +12,7 @@
   resolved "https://registry.yarnpkg.com/@graphile/lru/-/lru-4.6.0-alpha.0.tgz#ed9c3b32936520781db88d2436625ba40f9d0753"
   integrity sha512-0TXcROcXyrYx1VSlzxLwIgA7dEqAzm51qqf94aIfa0gfDFg3ClH4dgMT8VkwBGm7Jef9xEDYwqIyL1145g/dMQ==
 
-"@nger/core@^1.8.31":
+"@nger/core@^1.8.31", "@nger/core@^1.8.32":
   version "1.8.32"
   resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.8.32.tgz#12897b9a4df02e2a99469e746ad7e339e079f9cc"
   integrity sha512-UdQvchECc5GncR9tcPcXb8jfvyWVONzvHduGmu2/MOWf0FlFgBevbe3jGSc2fVwbpMe5B7krgBZ9IMYtxgBTcg==
@@ -35,10 +35,10 @@
   dependencies:
     "@nger/decorator" "^1.1.12"
 
-"@nger/graphql@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@nger/graphql/-/graphql-1.0.6.tgz#22bf2534f971875aede0803bf3b32216095028f0"
-  integrity sha512-OA5RipbK3GzuuXjIYEY0jfJ7Lja1p3TNPBgbAtzXnl70MeY5hgOjZFh2WWFLeGpDLHJABhD+rSQUdR997ELbLA==
+"@nger/graphql@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@nger/graphql/-/graphql-1.0.8.tgz#a19c855fa495dcbe395d008e2cc61479b9af7752"
+  integrity sha512-RYx+U7djGggiScYl/LD4kJQCVpixbxYUpUhsBZw0cqWN7P3BeuGKl163uWXtx0WMwNjqMF0TvBPBSNNRW3rC6w==
   dependencies:
     "@nger/core" "^1.8.31"
     graphql "^14.5.8"

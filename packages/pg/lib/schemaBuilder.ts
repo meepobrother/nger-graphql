@@ -35,7 +35,22 @@ export class PgSchemaBuilder extends SchemaBuilder {
         );
         return this._schema;
     }
-    buildRoot<T>(): T | undefined {
+    async buildRoot<T>(): Promise<T> {
         return undefined;
+    }
+
+    async buildContext() {
+        return {
+            pgClient: this.driver.master
+        } as any
+    }
+
+    async buildApollo() {
+        return {
+            schema: await this.buildSchema(),
+            playground: true,
+            context: await this.buildContext(),
+            subscriptions: true
+        } as any;
     }
 }
