@@ -1,6 +1,6 @@
 import { SchemaBuilder } from "@nger/graphql";
 import { GraphQLSchema } from 'graphql';
-import { Driver } from "@nger/orm.core";
+import { Driver } from "@nger/orm";
 import { createPostGraphileSchema, PostGraphileCoreOptions } from "postgraphile-core";
 import { Injector, Injectable } from "@nger/core";
 import { AppendPluginsToken, PrependPluginsToken, SkipPluginsToken } from "./token";

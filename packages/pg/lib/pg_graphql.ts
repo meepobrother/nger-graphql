@@ -2,7 +2,7 @@ import { SchemaBuilder } from "@nger/graphql";
 export { sql } from 'graphile-build-pg';
 import { graphql, ExecutionResult, Source } from "graphql";
 import pg from "pg";
-import { Driver } from "@nger/orm.core";
+import { Driver } from "@nger/orm";
 import { Injectable, Injector } from "@nger/core";
 
 @Injectable()

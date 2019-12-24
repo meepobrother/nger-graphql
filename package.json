@@ -8,16 +8,6 @@
         "lerna": "^3.13.1"
     },
     "dependencies": {
-        "@nger/core": "^1.8.9",
-        "@nger/graphql": "^1.0.5",
-        "@nger/orm.core": "^1.1.1",
-        "@nger/orm.postgres": "^1.1.4",
-        "@nger/platform.node": "^1.1.9",
-        "graphile-build-pg": "^4.5.3",
-        "graphile-utils": "^4.5.6",
-        "graphql": "^14.5.8",
-        "graphqlviz": "^3.1.0",
-        "postgraphile-core": "^4.5.3",
         "ts-node": "^8.5.2",
         "tsconfig-paths": "^3.9.0",
         "typescript": "^3.7.2"

@@ -12,14 +12,13 @@
   resolved "https://registry.yarnpkg.com/@graphile/lru/-/lru-4.6.0-alpha.0.tgz#ed9c3b32936520781db88d2436625ba40f9d0753"
   integrity sha512-0TXcROcXyrYx1VSlzxLwIgA7dEqAzm51qqf94aIfa0gfDFg3ClH4dgMT8VkwBGm7Jef9xEDYwqIyL1145g/dMQ==
 
-"@nger/core@^1.8.7":
-  version "1.8.7"
-  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.8.7.tgz#76e3ba1ff4703ddb22f8f4f20ac4b643590cb9c7"
-  integrity sha512-YTxXgJiHWoTo55xbWbLFfxcumLIzlV05FcQ/OxiE8NVronR6z5WvfA8/mHawtxruajviE4lbYhQm6YRt+32UBg==
+"@nger/core@^1.8.31":
+  version "1.8.32"
+  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.8.32.tgz#12897b9a4df02e2a99469e746ad7e339e079f9cc"
+  integrity sha512-UdQvchECc5GncR9tcPcXb8jfvyWVONzvHduGmu2/MOWf0FlFgBevbe3jGSc2fVwbpMe5B7krgBZ9IMYtxgBTcg==
   dependencies:
     "@nger/decorator" "^1.1.12"
-    "@nger/di" "^1.5.5"
-    http-status-codes "^1.4.0"
+    "@nger/di" "^1.5.21"
     rxjs "^6.5.3"
 
 "@nger/decorator@^1.1.12":
@@ -29,44 +28,44 @@
   dependencies:
     reflect-metadata "^0.1.13"
 
-"@nger/di@^1.5.5":
-  version "1.5.5"
-  resolved "https://registry.yarnpkg.com/@nger/di/-/di-1.5.5.tgz#e55fca7648275e8fc595bfe20af68ff206dae1c6"
-  integrity sha512-VbrjhS+B9nPQ6nDmSU3xkCvJkTkiEYoYC9Imw3UHACLvJbMs2shwzMzGH25/HLZM2osyd14Pd7EZ8Uo76lDh/Q==
+"@nger/di@^1.5.21":
+  version "1.5.22"
+  resolved "https://registry.yarnpkg.com/@nger/di/-/di-1.5.22.tgz#e085f4539ccc1b2cc081830815ad1c617321b57b"
+  integrity sha512-HnyejQuAvjzGoqrOuEVn5N5Qd42H6CIEeIk39ycjlidUyf5P2cf4TFrc6FeESImk7P6vgeuScodNql/B5tmk3w==
   dependencies:
     "@nger/decorator" "^1.1.12"
 
-"@nger/graphql@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@nger/graphql/-/graphql-1.0.5.tgz#3dd9c190aa4d79f23ba1d92e451bc02d16f40cbf"
-  integrity sha512-4ccqMGx55YJBc2GkjKxmmeFMGLKd+DKS3Ijk56WOs4gPaW+VEETJ0oz18MlbYS1XFb1F/nJfZ8zO11oyfnKkYw==
+"@nger/graphql@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@nger/graphql/-/graphql-1.0.6.tgz#22bf2534f971875aede0803bf3b32216095028f0"
+  integrity sha512-OA5RipbK3GzuuXjIYEY0jfJ7Lja1p3TNPBgbAtzXnl70MeY5hgOjZFh2WWFLeGpDLHJABhD+rSQUdR997ELbLA==
   dependencies:
-    "@nger/core" "^1.8.7"
+    "@nger/core" "^1.8.31"
     graphql "^14.5.8"
 
-"@nger/orm.core@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@nger/orm.core/-/orm.core-1.1.1.tgz#f4de4e97521d61330bf13600b30f3830263b5818"
-  integrity sha512-y7hmx/UwivmlP/GQuPs5JPVzONzAZ2mXoePiXFJFnuEQ4w+1Colk9X7tVcaHx3KruUKsK4bHWnzsYnj8/yxIGw==
+"@nger/orm-postgres@^1.1.14":
+  version "1.1.14"
+  resolved "https://registry.yarnpkg.com/@nger/orm-postgres/-/orm-postgres-1.1.14.tgz#60ed8791a58c745d154f1447adbaa10ff301c7ee"
+  integrity sha512-mdRjtH4kNMSGebi0YD0MoCcTHTH9Vs741hp1X9QHgE6oUHfpkiEXldh8/1CsUhS3rvQehx9ks9Zxb7WO2KvMvQ==
   dependencies:
-    "@nger/core" "^1.8.7"
-
-"@nger/orm.postgres@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@nger/orm.postgres/-/orm.postgres-1.1.4.tgz#6e7b8edf8d795ea8142a754c0ffb6299862825fd"
-  integrity sha512-pIgatYLf4pV5Xb7AWmYzMQqiXWrQO3DXXRG/om+oDbJ2O/DfdgwNqzLcp8aQVB+aYhrqNSDMjAQ3LBjnNTi+OQ==
-  dependencies:
-    "@nger/core" "^1.8.7"
-    "@nger/orm.core" "^1.1.1"
+    "@nger/core" "^1.8.31"
+    "@nger/orm" "^1.1.7"
     pg "^7.14.0"
     pg-connection-string "^2.1.0"
     pg-sql2 "^4.6.0-alpha.0"
     rxjs "^6.5.3"
 
+"@nger/orm@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@nger/orm/-/orm-1.1.7.tgz#5f1191469292c703a9b1356b076d1154f031e996"
+  integrity sha512-tEO7RpCgV6y4QY/Tsy6T7YfZoKl2J2/Mm6/I1jIthQbOQekjC3frmLkyQtOAPS7bVs5tOjkqE366XDVRLyVaUA==
+  dependencies:
+    "@nger/core" "^1.8.31"
+
 "@types/node@*":
-  version "12.12.21"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.21.tgz#aa44a6363291c7037111c47e4661ad210aded23f"
-  integrity sha512-8sRGhbpU+ck1n0PGAUgVrWrWdjSW2aqNeyC15W88GRsMpSwzv6RJGlLhE7s2RhVSOdyDmxbqlWSeThq4/7xqlA==
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.1.0.tgz#225cbaac5fdb2b9ac651b02c070d8aa3c37cc812"
+  integrity sha512-zwrxviZS08kRX40nqBrmERElF2vpw4IUTd5khkhBTfFH8AOaeoLVx48EC4+ZzS2/Iga7NevncqnsUSYjM4OWYA==
 
 "@types/pg-types@*":
   version "1.11.5"
@@ -74,9 +73,9 @@
   integrity sha512-L8ogeT6vDzT1vxlW3KITTCt+BVXXVkLXfZ/XNm6UqbcJgxf+KPO7yjWx7dQQE8RW07KopL10x2gNMs41+IkMGQ==
 
 "@types/pg@>=6 <8":
-  version "7.11.2"
-  resolved "https://registry.yarnpkg.com/@types/pg/-/pg-7.11.2.tgz#199dec09426c9359574dedede37313805ba3fca2"
-  integrity sha512-4+rj7fnidA77jFURNanuPPc1HrQv+RkhI6s+K18G9zOKbOUUpChA/rbNMqFukNuZ89LoIt/I9dAlxf329TjCNw==
+  version "7.14.0"
+  resolved "https://registry.yarnpkg.com/@types/pg/-/pg-7.14.0.tgz#aa67270638dbeb2e0ea532eed100819cd6ce4b85"
+  integrity sha512-BNR7pZubap5op5YjfWm5TWGciWbjmsbAq14fc8ydROej4DMK+u49YaVh9Cw9IE0MhnoQPcIAUSRdZDZPKlYV4A==
   dependencies:
     "@types/node" "*"
     "@types/pg-types" "*"
@@ -292,11 +291,6 @@ hosted-git-info@^2.1.4:
   version "2.8.5"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.5.tgz#759cfcf2c4d156ade59b0b2dfabddc42a6b9c70c"
   integrity sha512-kssjab8CvdXfcXMXVcvsXum4Hwdq9XGtRD3TteMEvEbq0LXyiNQr6AprqKqfeaDXze7SxWvRxdpwE6ku7ikLkg==
-
-http-status-codes@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/http-status-codes/-/http-status-codes-1.4.0.tgz#6e4c15d16ff3a9e2df03b89f3a55e1aae05fb477"
-  integrity sha512-JrT3ua+WgH8zBD3HEJYbeEgnuQaAnUeRRko/YojPAJjGmIfGD3KPU/asLdsLwKjfxOmQe5nXMQ0pt/7MyapVbQ==
 
 indent-string@^3.0.0:
   version "3.2.0"

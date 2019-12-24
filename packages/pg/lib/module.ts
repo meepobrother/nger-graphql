@@ -1,7 +1,7 @@
 
 import { Module, ModuleWithProviders, InjectionToken, Injector } from '@nger/core';
 import { PgGraphql } from './pg_graphql';
-import { PostgresOrmModule, PostgresConnectionOptions, POSTGRES_OPTIONS } from '@nger/orm.postgres';
+import { PostgresOrmModule, PostgresConnectionOptions, CONNECTION_OPTION_TOKEN } from '@nger/orm-postgres';
 import { GraphqlModule, SchemaBuilder, GraphqlService } from '@nger/graphql';
 import { PgSchemaBuilder } from './schemaBuilder';
 
@@ -21,6 +21,10 @@ import { PgSchemaBuilder } from './schemaBuilder';
             useClass: PgSchemaBuilder,
             deps: [Injector]
         }
+    ],
+    exports: [
+        GraphqlService,
+        SchemaBuilder
     ]
 })
 export class PgGraphqlModule {
@@ -28,7 +32,7 @@ export class PgGraphqlModule {
         return {
             ngModule: PgGraphqlModule,
             providers: [{
-                provide: POSTGRES_OPTIONS,
+                provide: CONNECTION_OPTION_TOKEN,
                 useValue: options
             }]
         }
