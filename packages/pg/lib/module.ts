@@ -21,10 +21,6 @@ import { PgSchemaBuilder } from './schemaBuilder';
             useClass: PgSchemaBuilder,
             deps: [Injector]
         }
-    ],
-    exports: [
-        GraphqlService,
-        SchemaBuilder
     ]
 })
 export class PgGraphqlModule {

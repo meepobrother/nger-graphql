@@ -27,7 +27,5 @@ platform.bootstrapModule(AppModule)
     .then(async res => {
         const ref = res.getModuleRef(PgGraphqlModule)!
         const builder = ref!.get(SchemaBuilder)
-        debugger;
         await builder.buildSchema();
-        debugger;
     })

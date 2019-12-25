@@ -1,6 +1,7 @@
-import { Controller, Post, Body } from '@nger/core'
+import { Controller } from '@nger/core'
 import { GraphqlService } from './graphql.service';
 import { Injector } from '@nger/di';
+import { Post, Body } from '@nger/http';
 @Controller({
     path: `/graphql`,
     providers: [GraphqlService]
