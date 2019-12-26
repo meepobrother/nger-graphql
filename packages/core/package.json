@@ -1,6 +1,6 @@
 {
     "name": "@nger/graphql",
-    "version": "1.0.11",
+    "version": "1.0.18",
     "description": "> TODO: description",
     "author": "imeepos <1037483576@qq.com>",
     "homepage": "https://github.com/meepobrother/nger-graphql#readme",
@@ -15,7 +15,7 @@
         "lib"
     ],
     "publishConfig": {
-        "registry": "http://registry.npmjs.org"
+        "access": "public"
     },
     "repository": {
         "type": "git",
@@ -30,6 +30,7 @@
     "dependencies": {
         "@nger/core": "^1.8.54",
         "@nger/http-node": "^1.0.13",
-        "graphql": "^14.5.8"
+        "graphql": "^14.5.8",
+        "graphql-tools": "^4.0.6"
     }
 }
