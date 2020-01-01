@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders, Type, APP_INITIALIZER, Injector, Config } from "@nger/core";
 import { SchemaBuilder } from "./core";
 import { resolvers } from "./handlers/resolver";
-import { MAIN_PATH, APOLLO } from './tokens';
+import { APOLLO } from './tokens';
 import { SERVER, ServerModule } from '@nger/server';
 import { DevSchemaBuilder } from "./devSchemaBuilder";
 @NgModule({
@@ -21,25 +21,16 @@ import { DevSchemaBuilder } from "./devSchemaBuilder";
     },
     deps: [Injector],
     multi: true
+  }, {
+    provide: SchemaBuilder,
+    useClass: DevSchemaBuilder
   }],
   imports: [
     ServerModule
   ]
 })
 export class GraphqlModule {
-  static forRoot(main: string): ModuleWithProviders {
-    return {
-      ngModule: GraphqlModule,
-      providers: [{
-        provide: MAIN_PATH,
-        useValue: main
-      }, {
-        provide: SchemaBuilder,
-        useClass: DevSchemaBuilder
-      }]
-    }
-  }
-  static forSchemaBuilder(cls: Type<SchemaBuilder>): ModuleWithProviders {
+  static forRoot(cls: Type<SchemaBuilder>): ModuleWithProviders {
     return {
       ngModule: GraphqlModule,
       providers: [

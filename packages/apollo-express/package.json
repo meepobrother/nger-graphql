@@ -1,6 +1,6 @@
 {
   "name": "@nger/apollo-express",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "> TODO: description",
   "author": "imeepos <admin@meepo.com.cn>",
   "homepage": "https://github.com/meepobrother/nger-graphql#readme",
@@ -28,8 +28,8 @@
     "url": "https://github.com/meepobrother/nger-graphql/issues"
   },
   "dependencies": {
-    "@nger/graphql": "^1.0.37",
-    "@nger/server": "^0.0.8",
+    "@nger/graphql": "^1.0.38",
+    "@nger/server": "^0.0.9",
     "apollo-server-express": "^2.9.15"
   }
 }

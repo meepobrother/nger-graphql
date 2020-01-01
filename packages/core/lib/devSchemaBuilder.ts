@@ -1,6 +1,5 @@
 import { SchemaBuilder } from "./core";
-import { Injector, isDevMode, Injectable } from '@nger/core';
-import { MAIN_PATH } from "./tokens";
+import { Injector, isDevMode, Injectable, MAIN_PATH } from '@nger/core';
 import { RESOLVER } from './handlers/tokens'
 import { readFileSync, writeFileSync } from 'fs'
 import { DocumentNode, parse, GraphQLSchema } from "graphql";
@@ -13,7 +12,7 @@ export class DevSchemaBuilder extends SchemaBuilder {
         super();
     }
     async buildSchema(): Promise<GraphQLSchema> {
-        const path = this.injector.get(MAIN_PATH)
+        const path = this.injector.get<string>(MAIN_PATH)
         const ext = extname(path)
         const graphqlPath = path.replace(ext, '.graphql')
         let ast: DocumentNode | undefined = undefined;

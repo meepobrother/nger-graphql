@@ -71,10 +71,10 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@nger/core@^1.9.19":
-  version "1.9.19"
-  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.9.19.tgz#d4596adc86268b2b43de47a69d14af1ecbc0e43f"
-  integrity sha512-XJbkAvcnwwmr3CVw9Ev4x5wAOp/bq8AEEc7LvIwImxfDaRrTgGbMM6LwCfHL29eVrqqzw+XMJTavCtNHnNqzAg==
+"@nger/core@^1.9.20":
+  version "1.9.20"
+  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.9.20.tgz#89db647d018f668b6b5b619863d4a1c658f67ed6"
+  integrity sha512-0Df0wt92yPD338d/Lj8lOjeoLW+ZEXJSaP2X9mjDR5inthUDENxbvoXvDmut1+Qz1OstJZSyI76rKvR/LzJ6Bw==
   dependencies:
     "@nger/di" "^1.5.53"
     rxjs "^6.5.3"
@@ -93,24 +93,24 @@
   dependencies:
     "@nger/decorator" "^1.1.12"
 
-"@nger/graphql@^1.0.37":
-  version "1.0.37"
-  resolved "https://registry.yarnpkg.com/@nger/graphql/-/graphql-1.0.37.tgz#678cbd7d634df062c0bfcd5429438640c3e29f3a"
-  integrity sha512-CaVNQIUJZTCABj/kRblK8aMXQkKlUwxwk6OCKz33FVWpdUM2cW5Jr/g9n2dBRfOVwCgLiL8AGe1XeL5lKnlW5Q==
+"@nger/graphql@^1.0.38":
+  version "1.0.38"
+  resolved "https://registry.yarnpkg.com/@nger/graphql/-/graphql-1.0.38.tgz#781c7bb1486961b0da2d7b91d61d17775224f188"
+  integrity sha512-SatHuTqq2Bor7G6exUWWd0zN+YHFS/+I2fu9IbqGSvK6Qw1Q71S8DtEa4PspkjKSq4oqq91ybHCz+D0c6ii3GQ==
   dependencies:
     "@apollo/federation" "^0.11.2"
     "@apollo/gateway" "^0.11.6"
-    "@nger/server" "^0.0.8"
+    "@nger/server" "^0.0.9"
     graphql "^14.5.8"
     graphql-tools "^4.0.6"
     subscriptions-transport-ws "^0.9.16"
 
-"@nger/server@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@nger/server/-/server-0.0.8.tgz#51a1644991b2fee67735101348d091e5e50072b5"
-  integrity sha512-/wge8vYseSGq0t4unnpUrhEcQ2lAQ78wHwzbGlecOr0/qJX1SLtdzjUb+lWU1d0YjU/N0y5avuImIxs/4PAn2A==
+"@nger/server@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@nger/server/-/server-0.0.9.tgz#2214b85db18fb9e2802cc9e7124a3034d27fa33a"
+  integrity sha512-+/22wrSOn4nPKrzoX4LKmzGfAXjSvNSLGbKUa9/A0jhdNQ6nROiRqRyk1xqZwXQx7bf0mV1vKaLOYyifSdCwlA==
   dependencies:
-    "@nger/core" "^1.9.19"
+    "@nger/core" "^1.9.20"
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
