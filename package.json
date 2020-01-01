@@ -8,6 +8,8 @@
         "lerna": "^3.13.1"
     },
     "dependencies": {
+        "@nger/ast.ts-graphql": "^1.1.9",
+        "@nger/graphql": "^1.0.35",
         "@nger/graphql-pg": "^1.0.10",
         "apollo-server": "^2.9.15",
         "ts-node": "^8.5.2",

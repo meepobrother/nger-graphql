@@ -1,27 +1,27 @@
-import { NgModule, ModuleWithProviders, Type, Injector } from "@nger/core";
+import { NgModule, ModuleWithProviders, Type, APP_INITIALIZER, Injector, Config } from "@nger/core";
 import { SchemaBuilder } from "./core";
 import { resolvers } from "./handlers/resolver";
-import { SubscriptionServer } from 'subscriptions-transport-ws';
-import { execute, subscribe } from 'graphql';
-import { GRAPHQL_SUBSCRIPTION_SERVER, MAIN_PATH } from './tokens'
-import { SERVER_WS, ServerWsModule } from '@nger/server-ws'
-import { ServerModule } from '@nger/server'
-
+import { MAIN_PATH, APOLLO } from './tokens';
+import { ServerWsModule } from '@nger/server-ws';
+import { ServerModule, SERVER } from '@nger/server';
 import { DevSchemaBuilder } from "./devSchemaBuilder";
 @NgModule({
   providers: [...resolvers, {
-    provide: GRAPHQL_SUBSCRIPTION_SERVER,
-    useFactory: async (injector: Injector) => {
-      const wsServer = injector.get(SERVER_WS)
-      const builder = injector.get(SchemaBuilder)
-      const schema = await builder.buildSchema();
-      return SubscriptionServer.create({
-        schema,
-        execute,
-        subscribe
-      }, wsServer)
+    provide: APP_INITIALIZER,
+    useFactory: (res: Injector) => {
+      return async () => {
+        const config = res.get(Config)
+        const apollo = await res.get(APOLLO)
+        const server = res.get(SERVER)
+        apollo.installSubscriptionHandlers(server)
+        const port = config.get(`PORT`, 9000);
+        server.listen(port, '0.0.0.0', () => {
+          console.log(`http://0.0.0.0:${port}/graphql`)
+        });
+      }
     },
-    deps: [Injector]
+    deps: [Injector],
+    multi: true
   }],
   imports: [
     ServerModule,
@@ -39,15 +39,6 @@ export class GraphqlModule {
         provide: SchemaBuilder,
         useClass: DevSchemaBuilder
       }]
-    }
-  }
-  /**
-   * 远程
-   */
-  static forCloud(): ModuleWithProviders {
-    return {
-      ngModule: GraphqlModule,
-      providers: []
     }
   }
   static forSchemaBuilder(cls: Type<SchemaBuilder>): ModuleWithProviders {

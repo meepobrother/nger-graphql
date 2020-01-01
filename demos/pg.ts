@@ -11,6 +11,7 @@ import { ApolloServer } from 'apollo-server'
             uuidExtension: 'pgcrypto',
             database: `zp`,
             entities: [],
+            schema: 'public',
             replication: {
                 master: {
                     host: `193.112.55.191`,

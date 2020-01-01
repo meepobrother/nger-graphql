@@ -1,7 +1,7 @@
 import { SchemaBuilder } from "@nger/graphql";
 export { sql } from 'graphile-build-pg';
 import { graphql } from "graphql";
-import { Injectable, Injector } from "@nger/core";
+import { Injectable } from "@nger/core";
 
 @Injectable()
 export class PgGraphql {

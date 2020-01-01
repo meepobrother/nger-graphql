@@ -1,14 +1,16 @@
 import { Module, Injector } from '@nger/core'
 import { DemoModule } from './demo.module';
-import { SERVER_WS_OPTIONS } from '@nger/server-ws'
 import express from 'express'
 import { SERVER_LISTENER } from '@nger/server'
 import { ApolloServer } from 'apollo-server-express'
 import { SchemaBuilder } from '@nger/graphql';
-import { APOLLO, EXPRESS } from './token'
+import { APOLLO, EXPRESS } from '@nger/graphql';
+import { GraphqlModule } from '@nger/graphql';
+import { join } from 'path';
 @Module({
     imports: [
-        DemoModule
+        DemoModule,
+        GraphqlModule.forRoot(join(__dirname, 'main.ts'))
     ],
     providers: [{
         provide: APOLLO,
@@ -33,14 +35,8 @@ import { APOLLO, EXPRESS } from './token'
         useFactory: () => {
             return express();
         },
-        deps: []   },
-    {
-        provide: SERVER_WS_OPTIONS,
-        useValue: {
-            path: '/graphql'
-        }
-    }
-    ]
+        deps: []
+    }]
 })
 export class AppModule {
 
