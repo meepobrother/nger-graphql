@@ -1,8 +1,8 @@
 {
-  "name": "@nger/graphql",
-  "version": "1.0.37",
+  "name": "@nger/apollo-express",
+  "version": "0.0.3",
   "description": "> TODO: description",
-  "author": "imeepos <1037483576@qq.com>",
+  "author": "imeepos <admin@meepo.com.cn>",
   "homepage": "https://github.com/meepobrother/nger-graphql#readme",
   "license": "ISC",
   "main": "lib/index.js",
@@ -28,14 +28,8 @@
     "url": "https://github.com/meepobrother/nger-graphql/issues"
   },
   "dependencies": {
-    "@apollo/federation": "^0.11.2",
-    "@apollo/gateway": "^0.11.6",
+    "@nger/graphql": "^1.0.37",
     "@nger/server": "^0.0.8",
-    "graphql": "^14.5.8",
-    "graphql-tools": "^4.0.6",
-    "subscriptions-transport-ws": "^0.9.16"
-  },
-  "devDependencies": {
-    "@nger/ast.ts-graphql": "^1.1.8"
+    "apollo-server-express": "^2.9.15"
   }
 }

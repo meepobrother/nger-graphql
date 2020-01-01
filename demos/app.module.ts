@@ -1,42 +1,17 @@
-import { Module, Injector } from '@nger/core'
+import { NgModule } from '@nger/core'
 import { DemoModule } from './demo.module';
-import express from 'express'
-import { SERVER_LISTENER } from '@nger/server'
-import { ApolloServer } from 'apollo-server-express'
-import { SchemaBuilder } from '@nger/graphql';
-import { APOLLO, EXPRESS } from '@nger/graphql';
 import { GraphqlModule } from '@nger/graphql';
 import { join } from 'path';
-@Module({
+import { ApolloExpressModule } from '@nger/apollo-express'
+import { ServerModule } from '@nger/server'
+@NgModule({
     imports: [
-        DemoModule,
-        GraphqlModule.forRoot(join(__dirname, 'main.ts'))
+        ServerModule,
+        ApolloExpressModule,
+        GraphqlModule.forRoot(join(__dirname, 'main.ts')),
+        DemoModule
     ],
-    providers: [{
-        provide: APOLLO,
-        useFactory: async (injector: Injector) => {
-            const builder = injector.get(SchemaBuilder)
-            const schema = await builder.buildSchema();
-            const apollo = new ApolloServer({
-                schema,
-                playground: true
-            });
-            const app = injector.get<any>(EXPRESS)
-            apollo.applyMiddleware({ app })
-            return apollo;
-        },
-        deps: [Injector]
-    }, {
-        provide: SERVER_LISTENER,
-        useExisting: EXPRESS
-    },
-    {
-        provide: EXPRESS,
-        useFactory: () => {
-            return express();
-        },
-        deps: []
-    }]
+    providers: []
 })
 export class AppModule {
 

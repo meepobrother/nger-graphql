@@ -1,13 +1,8 @@
-import { Module } from "@nger/core";
+import { NgModule } from "@nger/core";
 import { DemoController } from "./demo.controller";
-import { ServerModule } from '@nger/server'
-@Module({
+@NgModule({
     controllers: [
         DemoController
-    ],
-    imports: [
-        ServerModule,
-        
     ]
 })
 export class DemoModule { }

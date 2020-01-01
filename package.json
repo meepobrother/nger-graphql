@@ -8,9 +8,9 @@
         "lerna": "^3.13.1"
     },
     "dependencies": {
+        "@nger/apollo-express": "^0.0.3",
         "@nger/ast.ts-graphql": "^1.1.9",
-        "@nger/graphql": "^1.0.35",
-        "@nger/graphql-pg": "^1.0.10",
+        "@nger/graphql": "^1.0.37",
         "apollo-server": "^2.9.15",
         "ts-node": "^8.5.2",
         "tsconfig-paths": "^3.9.0",

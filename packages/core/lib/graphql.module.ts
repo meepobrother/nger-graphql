@@ -2,8 +2,7 @@ import { NgModule, ModuleWithProviders, Type, APP_INITIALIZER, Injector, Config 
 import { SchemaBuilder } from "./core";
 import { resolvers } from "./handlers/resolver";
 import { MAIN_PATH, APOLLO } from './tokens';
-import { ServerWsModule } from '@nger/server-ws';
-import { ServerModule, SERVER } from '@nger/server';
+import { SERVER, ServerModule } from '@nger/server';
 import { DevSchemaBuilder } from "./devSchemaBuilder";
 @NgModule({
   providers: [...resolvers, {
@@ -24,8 +23,7 @@ import { DevSchemaBuilder } from "./devSchemaBuilder";
     multi: true
   }],
   imports: [
-    ServerModule,
-    ServerWsModule
+    ServerModule
   ]
 })
 export class GraphqlModule {
