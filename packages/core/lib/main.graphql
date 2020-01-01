@@ -1,0 +1,6 @@
+type Version {
+  full: String!
+  major: String!
+  minor: String!
+  patch: String!
+}

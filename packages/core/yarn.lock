@@ -88,10 +88,10 @@
     "@nger/plain" "^1.1.3"
     typescript "^3.7.3"
 
-"@nger/ast.ts-graphql@^1.1.8":
-  version "1.1.8"
-  resolved "http://10.0.0.202:9008/@nger%2fast.ts-graphql/-/ast.ts-graphql-1.1.8.tgz#1d845dd08997cd0f07af4829b82ea8d6f0c15317"
-  integrity sha1-HYRd0ImXzQ8Hr0gpuC6o1vDBUxc=
+"@nger/ast.ts-graphql@^1.1.12":
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/@nger/ast.ts-graphql/-/ast.ts-graphql-1.1.12.tgz#4aae9dc6149ab11dbd403d3af2426bd156672fef"
+  integrity sha512-VPzF07kbkA75aAfv/e62h/8jQi6az2DFjLqqJcwa63m5XJO6b9nuh9Q/r+d2F9XwbVWP8GPK9t6MLY8Pmwyb5w==
   dependencies:
     "@nger/ast.graphql" "^1.1.2"
     "@nger/ast.tsc" "^1.1.3"

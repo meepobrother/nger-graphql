@@ -4,11 +4,14 @@ import { resolvers } from "./handlers/resolver";
 import { APOLLO } from './tokens';
 import { SERVER, ServerModule } from '@nger/server';
 import { DevSchemaBuilder } from "./devSchemaBuilder";
+import { VersionController } from "./version.controller";
 @NgModule({
   providers: [...resolvers, {
     provide: APP_INITIALIZER,
     useFactory: (res: Injector) => {
       return async () => {
+        const builder = res.get(SchemaBuilder);
+        await builder.buildSchema();
         const config = res.get(Config)
         const apollo = await res.get(APOLLO)
         const server = res.get(SERVER)
@@ -27,6 +30,9 @@ import { DevSchemaBuilder } from "./devSchemaBuilder";
   }],
   imports: [
     ServerModule
+  ],
+  controllers: [
+    VersionController
   ]
 })
 export class GraphqlModule {
