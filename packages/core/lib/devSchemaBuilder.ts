@@ -4,7 +4,7 @@ import { RESOLVER } from './handlers/tokens'
 import { readFileSync, writeFileSync } from 'fs'
 import { DocumentNode, parse, GraphQLSchema } from "graphql";
 import { makeExecutableSchema } from 'graphql-tools'
-import { extname } from 'path'
+import { extname, join } from 'path'
 
 @Injectable()
 export class DevSchemaBuilder extends SchemaBuilder {
@@ -14,7 +14,12 @@ export class DevSchemaBuilder extends SchemaBuilder {
     async buildSchema(): Promise<GraphQLSchema> {
         const path = this.injector.get<string>(MAIN_PATH)
         const ext = extname(path)
-        const graphqlPath = path.replace(ext, '.graphql')
+        let graphqlPath = path;
+        if (ext) {
+            graphqlPath = path.replace(ext, '.graphql')
+        } else {
+            graphqlPath = join(path, 'main.graphql')
+        }
         let ast: DocumentNode | undefined = undefined;
         if (isDevMode) {
             const graphql = await import('@nger/ast.ts-graphql').then(res => res.toGraphql(path));
