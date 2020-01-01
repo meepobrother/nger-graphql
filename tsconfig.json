@@ -17,7 +17,8 @@
         "emitDecoratorMetadata": true
     },
     "include": [
-        "packages"
+        "packages",
+        "demos"
     ],
     "exclude": [
         "node_modules"

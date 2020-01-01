@@ -4,22 +4,19 @@ import { MutationMetadataKey, MutationOptions } from "../../decorators";
 import { StaticProvider, Injector, InjectionToken } from "@nger/di";
 import { IMethodDecorator, IClassDecorator } from "@nger/decorator";
 import { GraphQLResolveInfo } from "graphql";
-
+import { ControllerOptions, NgerRef } from "@nger/core";
 export const mutationProvicer: StaticProvider = {
   provide: MutationMetadataKey,
   useValue: handler
 };
-
 function handler(
   injector: Injector,
   it: IMethodDecorator<any, MutationOptions>,
-  parent: IClassDecorator,
-  path: string
+  ctrl: IClassDecorator<any, ControllerOptions>,
+  nger: NgerRef<any>
 ) {
   const options = it.options;
   if (options) {
-    const instance = injector.get(it.type);
-    const handler = instance[it.property];
     let path = options.path;
     if (options.path instanceof InjectionToken) {
       path = injector.get(options.path);
@@ -33,7 +30,7 @@ function handler(
         mergeInfo: MergeInfo;
       }
     ) => {
-      injector.setStatic([
+      const _injector = injector.create([
         {
           provide: SOURCE,
           useValue: source
@@ -51,7 +48,8 @@ function handler(
           useValue: context
         }
       ]);
-      return handler();
+      const instance = nger.create(_injector)
+      return instance[it.property]();
     };
     root.setStatic([
       {

@@ -1,0 +1,15 @@
+type Message {
+  data: String!
+}
+
+type User {
+  username: String!
+}
+
+type Query {
+  getUser: User!
+}
+
+type Subscription {
+  ｍyMessages: Message!
+}

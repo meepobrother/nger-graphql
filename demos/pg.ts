@@ -1,8 +1,9 @@
-import { PgGraphqlModule } from '../lib'
+import { PgGraphqlModule } from '@nger/graphql-pg'
 import { corePlatform } from '@nger/core'
 import { } from 'postgraphile-core'
 import { Module } from '@nger/core'
-import { SchemaBuilder, GraphqlService } from '@nger/graphql'
+import { SchemaBuilder } from '@nger/graphql'
+import { ApolloServer } from 'apollo-server'
 @Module({
     imports: [
         PgGraphqlModule.forFeature({
@@ -27,5 +28,12 @@ platform.bootstrapModule(AppModule)
     .then(async res => {
         const ref = res.getModuleRef(PgGraphqlModule)!
         const builder = ref!.get(SchemaBuilder)
-        await builder.buildSchema();
+        const schema = await builder.buildSchema();
+        const apollo = new ApolloServer({
+            schema,
+            context: builder.buildContext()
+        })
+        apollo.listen().then(({ url }) => {
+            console.log(url)
+        })
     })

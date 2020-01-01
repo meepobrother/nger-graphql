@@ -4,13 +4,19 @@ import { PgGraphql } from './pg_graphql';
 import { PostgresOrmModule, PostgresConnectionOptions, CONNECTION_OPTION_TOKEN } from '@nger/orm-postgres';
 import { GraphqlModule, SchemaBuilder, GraphqlService } from '@nger/graphql';
 import { PgSchemaBuilder } from './schemaBuilder';
-
+import { AppendPluginsToken } from './token';
+import ConnectionFilterPlugin from "postgraphile-plugin-connection-filter";
 @Module({
     imports: [
         PostgresOrmModule,
         GraphqlModule
     ],
     providers: [
+        {
+            provide: AppendPluginsToken,
+            useValue: ConnectionFilterPlugin,
+            multi: true
+        },
         {
             provide: GraphqlService,
             useClass: PgGraphql,

@@ -10,7 +10,6 @@ import {
 } from "./tokens";
 import { StaticProvider } from "@nger/di";
 import { handlers } from "./handlers";
-
 export const resolvers: StaticProvider[] = [
   ...handlers,
   {
