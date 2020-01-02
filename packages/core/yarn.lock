@@ -88,10 +88,10 @@
     "@nger/plain" "^1.1.3"
     typescript "^3.7.3"
 
-"@nger/ast.ts-graphql@^1.1.12":
-  version "1.1.12"
-  resolved "https://registry.yarnpkg.com/@nger/ast.ts-graphql/-/ast.ts-graphql-1.1.12.tgz#4aae9dc6149ab11dbd403d3af2426bd156672fef"
-  integrity sha512-VPzF07kbkA75aAfv/e62h/8jQi6az2DFjLqqJcwa63m5XJO6b9nuh9Q/r+d2F9XwbVWP8GPK9t6MLY8Pmwyb5w==
+"@nger/ast.ts-graphql@^1.1.16":
+  version "1.1.16"
+  resolved "https://registry.yarnpkg.com/@nger/ast.ts-graphql/-/ast.ts-graphql-1.1.16.tgz#c581a0663a69d3a242b9ea11a524a8e97a10554d"
+  integrity sha512-pgTAH3MnEdSeTypUDist6L9Y6fM2S6njEJBQz8g8q815O21jZ05Qx+8Ft17Mq6ZESotPVcncUyS0Ar5iPjvGKQ==
   dependencies:
     "@nger/ast.graphql" "^1.1.2"
     "@nger/ast.tsc" "^1.1.3"
@@ -104,6 +104,14 @@
   dependencies:
     "@nger/plain" "^1.1.3"
     ts-morph "^6.0.2"
+
+"@nger/core@^1.8.54":
+  version "1.9.21"
+  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.9.21.tgz#78d16dce53c133ba3ad993ad8f6136c4251270db"
+  integrity sha512-xX28avaHEz5PUp9Oi7vsOGjHv+ycJGCX4QG+eqh96IfwvuS3Rg5FGwmr23LjCVvQ9D0f/Vr9aes7rxgWW7WktQ==
+  dependencies:
+    "@nger/di" "^1.5.53"
+    rxjs "^6.5.3"
 
 "@nger/core@^1.9.20":
   version "1.9.20"
@@ -134,12 +142,32 @@
   dependencies:
     "@nger/decorator" "^1.1.13"
 
-"@nger/server@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@nger/server/-/server-0.0.9.tgz#2214b85db18fb9e2802cc9e7124a3034d27fa33a"
-  integrity sha512-+/22wrSOn4nPKrzoX4LKmzGfAXjSvNSLGbKUa9/A0jhdNQ6nROiRqRyk1xqZwXQx7bf0mV1vKaLOYyifSdCwlA==
+"@nger/rx-effects@^1.1.13":
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/@nger/rx-effects/-/rx-effects-1.1.13.tgz#48dafa041f6e31b6eeb031c530f5dfcfe041534a"
+  integrity sha512-D62BzEP0UHGO0RCYTMJkr8bW/BSIwTQe/wfrqWVcCXuek8WKtB1GPdkfCe04EddNTudcZQEASVTmIkwMfx++jg==
+  dependencies:
+    "@nger/rx-store" "^1.1.19"
+    rxjs "^6.5.3"
+
+"@nger/rx-store@^1.1.19":
+  version "1.1.19"
+  resolved "https://registry.yarnpkg.com/@nger/rx-store/-/rx-store-1.1.19.tgz#0152c558a00632c6cf43aef7868b4b95184354c3"
+  integrity sha512-d7EflZ3NYwezU61zBmYAXeZuPPdtLLGCu6oFr/xOCp7m+21DUgDxG2q6yuAllgA1BuEPJuGVLCnPOjsDuQa05g==
+  dependencies:
+    "@nger/core" "^1.8.54"
+    rxjs "^6.5.3"
+
+"@nger/server@^0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@nger/server/-/server-0.0.12.tgz#221faf856d971d30af82b01522476b8924ef44be"
+  integrity sha512-yoKCcVQThDU3Qmm6mFlU8XYHW2k3NO/cX9ZpH3VFIFn2+C8KZyZD0gON/PO5r5S8kRYvi91c78KWx6jIqlRN6w==
   dependencies:
     "@nger/core" "^1.9.20"
+    "@nger/rx-effects" "^1.1.13"
+    "@nger/rx-store" "^1.1.19"
+    "@types/uuid" "^3.4.6"
+    uuid "^3.3.3"
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
@@ -386,6 +414,13 @@
   dependencies:
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
+
+"@types/uuid@^3.4.6":
+  version "3.4.6"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-3.4.6.tgz#d2c4c48eb85a757bf2927f75f939942d521e3016"
+  integrity sha512-cCdlC/1kGEZdEglzOieLDYBxHsvEOIg7kp/2FYyVR9Pxakq+Qf/inL3RKQ+PA8gOlI/NnL+fXmQH12nwcGzsHw==
+  dependencies:
+    "@types/node" "*"
 
 "@types/ws@^6.0.0":
   version "6.0.4"
@@ -1121,7 +1156,7 @@ string.prototype.trimright@^2.1.1:
     define-properties "^1.1.3"
     function-bind "^1.1.1"
 
-subscriptions-transport-ws@^0.9.11, subscriptions-transport-ws@^0.9.16:
+subscriptions-transport-ws@^0.9.11:
   version "0.9.16"
   resolved "http://10.0.0.202:9008/subscriptions-transport-ws/-/subscriptions-transport-ws-0.9.16.tgz#90a422f0771d9c32069294c08608af2d47f596ec"
   integrity sha1-kKQi8HcdnDIGkpTAhgivLUf1luw=
@@ -1193,7 +1228,7 @@ util.promisify@^1.0.0:
     define-properties "^1.1.2"
     object.getownpropertydescriptors "^2.0.3"
 
-uuid@^3.1.0:
+uuid@^3.1.0, uuid@^3.3.3:
   version "3.3.3"
   resolved "http://10.0.0.202:9008/uuid/-/uuid-3.3.3.tgz#4568f0216e78760ee1dbf3a4d2cf53e224112866"
   integrity sha1-RWjwIW54dg7h2/Ok0s9T4iQRKGY=

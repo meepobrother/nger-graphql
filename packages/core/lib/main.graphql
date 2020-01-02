@@ -4,3 +4,7 @@ type Version {
   minor: String!
   patch: String!
 }
+
+type Query {
+  version: Version!
+}
