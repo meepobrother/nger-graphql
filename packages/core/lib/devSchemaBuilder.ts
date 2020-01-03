@@ -30,10 +30,10 @@ export class DevSchemaBuilder extends SchemaBuilder {
             ast = parse(readFileSync(graphqlPath).toString('utf8'))
         }
         const resolver = this.injector.get(RESOLVER)
-        this._schema = buildFederatedSchema([{
-            typeDefs: ast,
+        this._schema = buildFederatedSchema({
+            typeDefs: [ast],
             resolvers: resolver.resolvers
-        }]);
+        });
         return this._schema;
     }
     async buildRoot<T>(): Promise<T> {

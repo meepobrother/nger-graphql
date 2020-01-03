@@ -5,7 +5,9 @@ import {
   createParameterDecorator,
   IParameterDecorator,
   createClassDecorator,
-  IClassDecorator
+  IClassDecorator,
+  createPropertyDecorator,
+  IPropertyDecorator
 } from "@nger/decorator";
 
 export const DirectiveMetadataKey = `DirectiveMetadataKey`;
@@ -70,6 +72,25 @@ export const Args = createParameterDecorator<
     };
   }
 });
+export interface ResolvePropertyOptions {
+  path: string | InjectionToken<string>
+}
+export const ResolveProperty = createPropertyDecorator<ResolvePropertyOptions | string | InjectionToken<string>>(`@nger/graphql ResolveProperty`, (it: IPropertyDecorator<any, any>) => {
+  const options = it.options;
+  if (options instanceof InjectionToken || typeof options === "string") {
+    it.options = {
+      path: options
+    };
+  } else if (options) {
+    it.options = {
+      ...options
+    };
+  } else {
+    it.options = {
+      path: it.property as string
+    };
+  }
+})
 
 function handler(it: IMethodDecorator<any, any>) {
   const options = it.options;
