@@ -10,9 +10,6 @@ export function getTsconfig(path: string) {
     if (existsSync(dir) || existsSync(join(path, 'package.json'))) return dir;
     return getTsconfig(join(path, '..'))
 }
-export function getVersion() {
-    return parse(readFileSync(join(__dirname, 'main.graphql')).toString('utf8'))
-}
 @Injectable()
 export class DevSchemaBuilder extends SchemaBuilder {
     private _schema: GraphQLSchema;
