@@ -1,8 +1,8 @@
 {
-  "name": "@nger/graphql",
-  "version": "1.0.44",
+  "name": "@nger/graphql-cloud",
+  "version": "0.0.1",
   "description": "> TODO: description",
-  "author": "imeepos <1037483576@qq.com>",
+  "author": "imeepos <admin@meepo.com.cn>",
   "homepage": "https://github.com/meepobrother/nger-graphql#readme",
   "license": "ISC",
   "main": "lib/index.js",
@@ -28,11 +28,8 @@
     "url": "https://github.com/meepobrother/nger-graphql/issues"
   },
   "dependencies": {
-    "@apollo/federation": "^0.11.2",
+    "@apollo/gateway": "^0.11.6",
     "@nger/core": "^1.9.21",
-    "graphql": "^14.5.8"
-  },
-  "devDependencies": {
-    "@nger/ast.ts-graphql": "^1.1.16"
+    "node-fetch": "^2.6.0"
   }
 }

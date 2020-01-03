@@ -3,8 +3,8 @@ import { Injector, isDevMode, Injectable, MAIN_PATH } from '@nger/core';
 import { RESOLVER } from './handlers/tokens'
 import { readFileSync, writeFileSync, existsSync } from 'fs'
 import { DocumentNode, parse, GraphQLSchema } from "graphql";
-import { makeExecutableSchema } from 'graphql-tools'
 import { extname, join, dirname } from 'path'
+import { buildFederatedSchema } from '@apollo/federation'
 export function getTsconfig(path: string) {
     const dir = join(path, 'tsconfig.json')
     if (existsSync(dir) || existsSync(join(path, 'package.json'))) return dir;
@@ -33,10 +33,10 @@ export class DevSchemaBuilder extends SchemaBuilder {
             ast = parse(readFileSync(graphqlPath).toString('utf8'))
         }
         const resolver = this.injector.get(RESOLVER)
-        this._schema = makeExecutableSchema({
-            typeDefs: [ast, getVersion()],
-            ...resolver
-        });
+        this._schema = buildFederatedSchema([{
+            typeDefs: ast,
+            resolvers: resolver.resolvers
+        }]);
         return this._schema;
     }
     async buildRoot<T>(): Promise<T> {

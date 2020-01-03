@@ -3,6 +3,10 @@ import { SchemaBuilder } from "./core";
 import { resolvers } from "./handlers/resolver";
 import { DevSchemaBuilder } from "./devSchemaBuilder";
 import { VersionController } from "./version.controller";
+export interface ServerCloud {
+  name: string;
+  url: string;
+}
 @NgModule({
   providers: [
     ...resolvers,
@@ -16,12 +20,6 @@ import { VersionController } from "./version.controller";
   ]
 })
 export class GraphqlModule {
-  static forCloud(): ModuleWithProviders {
-    return {
-      ngModule: GraphqlModule,
-      providers: []
-    }
-  }
   static forRoot(cls: Type<SchemaBuilder>): ModuleWithProviders {
     return {
       ngModule: GraphqlModule,
