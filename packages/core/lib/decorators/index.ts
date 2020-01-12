@@ -21,6 +21,7 @@ export const Directive = createClassDecorator<
 export const ScalarMetadataKey = `ScalarMetadataKey`;
 export interface ScalarOptions {
   name: string | InjectionToken<string>;
+  description: string;
 }
 export const Scalar = createClassDecorator<
   ScalarOptions | string | InjectionToken<string>

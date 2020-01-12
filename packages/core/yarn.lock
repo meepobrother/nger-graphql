@@ -29,10 +29,10 @@
     "@nger/plain" "^1.1.3"
     typescript "^3.7.3"
 
-"@nger/ast.ts-graphql@^1.1.16":
-  version "1.1.16"
-  resolved "https://registry.yarnpkg.com/@nger/ast.ts-graphql/-/ast.ts-graphql-1.1.16.tgz#c581a0663a69d3a242b9ea11a524a8e97a10554d"
-  integrity sha512-pgTAH3MnEdSeTypUDist6L9Y6fM2S6njEJBQz8g8q815O21jZ05Qx+8Ft17Mq6ZESotPVcncUyS0Ar5iPjvGKQ==
+"@nger/ast.ts-graphql@^1.1.26":
+  version "1.1.26"
+  resolved "https://registry.yarnpkg.com/@nger/ast.ts-graphql/-/ast.ts-graphql-1.1.26.tgz#89dfe6e1af7345fa414f33aea28d9a17d4549aed"
+  integrity sha512-zRJpSeIIHl1Cko8MtL9G4dp0nqR+YLaf2YFjUQYmx4m/Yf7mg+1aOMGhPR3EiHNTTNzwk+X6oEghibETZEogPA==
   dependencies:
     "@nger/ast.graphql" "^1.1.2"
     "@nger/ast.tsc" "^1.1.3"
@@ -46,10 +46,10 @@
     "@nger/plain" "^1.1.3"
     ts-morph "^6.0.2"
 
-"@nger/core@^1.9.21":
-  version "1.9.21"
-  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.9.21.tgz#78d16dce53c133ba3ad993ad8f6136c4251270db"
-  integrity sha512-xX28avaHEz5PUp9Oi7vsOGjHv+ycJGCX4QG+eqh96IfwvuS3Rg5FGwmr23LjCVvQ9D0f/Vr9aes7rxgWW7WktQ==
+"@nger/core@^1.9.28":
+  version "1.9.28"
+  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.9.28.tgz#17b9345b61c4a3da2b9b3a55e702281af83cbde4"
+  integrity sha512-gbrCV+Z6065/70r12w+V82fRaH9IqZg/BAsNjFN/AcbZzM0SG25UHbxUvoQ+Z6FVySqkQeZbgEk2oF0aTmL0uQ==
   dependencies:
     "@nger/di" "^1.5.53"
     rxjs "^6.5.3"

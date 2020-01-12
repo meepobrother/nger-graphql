@@ -1,8 +1,10 @@
 import { NgModule } from "@nger/core";
 import { DemoController } from "./demo.controller";
+import { DemoScalar } from "./demo.scalar";
 @NgModule({
     controllers: [
-        DemoController
+        DemoController,
+        DemoScalar
     ]
 })
 export class DemoModule { }

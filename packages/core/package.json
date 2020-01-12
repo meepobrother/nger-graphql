@@ -1,6 +1,6 @@
 {
   "name": "@nger/graphql",
-  "version": "1.0.50",
+  "version": "1.0.55",
   "description": "> TODO: description",
   "author": "imeepos <1037483576@qq.com>",
   "homepage": "https://github.com/meepobrother/nger-graphql#readme",
@@ -29,10 +29,10 @@
   },
   "dependencies": {
     "@apollo/federation": "^0.11.2",
-    "@nger/core": "^1.9.21",
+    "@nger/core": "^1.9.28",
     "graphql": "^14.5.8"
   },
   "devDependencies": {
-    "@nger/ast.ts-graphql": "^1.1.16"
+    "@nger/ast.ts-graphql": "^1.1.26"
   }
 }
