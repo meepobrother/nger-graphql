@@ -3,7 +3,7 @@ import { SchemaBuilder } from "./core";
 import { resolvers } from "./handlers/resolver";
 import { DevSchemaBuilder } from "./devSchemaBuilder";
 import { GraphqlService } from "./graphql.service";
-import { AnyScalar, BigIntScalar, DateScalar, EmailScalar, Ipv4Scalar, Ipv6Scalar, MobileScalar, ObjectScalar, URLScalar, ObjectLiteralScalar } from "./scalars";
+import { AnyScalar, BigIntScalar, DateScalar, EmailScalar, Ipv4Scalar, Ipv6Scalar, MobileScalar, ObjectScalar, URLScalar, ObjectLiteralScalar, EmptyScalar, FloatScalar, UndefinedScalar, VoidScalar } from "./scalars";
 export interface ServerCloud {
   name: string;
   url: string;
@@ -28,7 +28,11 @@ export interface ServerCloud {
     MobileScalar,
     ObjectScalar,
     URLScalar,
-    ObjectLiteralScalar
+    ObjectLiteralScalar,
+    EmptyScalar,
+    FloatScalar,
+    UndefinedScalar,
+    VoidScalar
   ]
 })
 export class GraphqlModule {
