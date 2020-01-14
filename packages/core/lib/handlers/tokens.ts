@@ -35,4 +35,4 @@ export const RESOLVER = new InjectionToken<{
 export const SOURCE = new InjectionToken(`@nger/graphql SOURCE`);
 export const INFO = new InjectionToken(`@nger/graphql INFO`);
 export const CONTEXT = new InjectionToken(`@nger/graphql CONTEXT`);
-export const ARGS = new InjectionToken(`@nger/graphql ARGS`);
+export const ARGS = new InjectionToken<any>(`@nger/graphql ARGS`);
