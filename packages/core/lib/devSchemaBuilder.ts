@@ -22,7 +22,7 @@ export class DevSchemaBuilder extends SchemaBuilder {
         const ext = extname(path)
         const graphqlPath = path.replace(ext, '.graphql')
         let ast: DocumentNode | undefined = undefined;
-        if (isDevMode) {
+        if (isDevMode()) {
             const graphql = await import('@nger/ast.ts-graphql').then(res => res.toGraphql(path, getTsconfig(dirname(path))));
             writeFileSync(graphqlPath, graphql)
             ast = parse(graphql)

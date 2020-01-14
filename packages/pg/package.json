@@ -1,6 +1,6 @@
 {
     "name": "@nger/graphql-pg",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "description": "> TODO: description",
     "author": "imeepos <1037483576@qq.com>",
     "homepage": "https://github.com/meepobrother/nger-graphql#readme",
@@ -28,7 +28,7 @@
         "url": "https://github.com/meepobrother/nger-graphql/issues"
     },
     "dependencies": {
-        "@nger/graphql": "^1.0.31",
+        "@nger/graphql": "^1.0.58",
         "@nger/orm-postgres": "^1.1.17",
         "graphile-build-pg": "^4.5.3",
         "graphile-utils": "^4.5.6",

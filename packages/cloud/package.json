@@ -1,6 +1,6 @@
 {
   "name": "@nger/graphql-cloud",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "> TODO: description",
   "author": "imeepos <admin@meepo.com.cn>",
   "homepage": "https://github.com/meepobrother/nger-graphql#readme",
@@ -28,8 +28,8 @@
     "url": "https://github.com/meepobrother/nger-graphql/issues"
   },
   "dependencies": {
-    "@apollo/gateway": "^0.11.6",
-    "@nger/core": "^1.9.21",
+    "@apollo/gateway": "^0.11.7",
+    "@nger/core": "^1.9.34",
     "node-fetch": "^2.6.0"
   }
 }
