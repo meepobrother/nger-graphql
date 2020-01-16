@@ -43,9 +43,7 @@ export const resolvers: StaticProvider[] = [
       if (subscription.length > 0) {
         const Subscription = {};
         subscription.map(it => {
-          Subscription[it.path] = (...args:any[])=>{
-            debugger;
-          };
+          Subscription[it.path] = it.handler;
         });
         console.log(Subscription)
         Reflect.set(resolvers, "Subscription", Subscription);

@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders, Type, Injector } from "@nger/core";
+import { NgModule, ModuleWithProviders, Injector } from "@nger/core";
 import { SchemaBuilder } from "./core";
 import { resolvers } from "./handlers/resolver";
 import { DevSchemaBuilder } from "./devSchemaBuilder";

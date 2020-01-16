@@ -15,7 +15,6 @@ corePlatform([{
         cors: true,
         subscriptions: '/'
     }
-    console.log(options)
     const apollo = new ApolloServer(options)
     apollo.listen(4001, '0.0.0.0').then(({ url }) => {
         console.log(url)

@@ -1,7 +1,9 @@
+scalar Upload
+
 scalar _Any
+
 scalar _FieldSet
-union _Entity
-type _Service
+
 scalar Any
 
 scalar BigInt
@@ -30,20 +32,20 @@ scalar Undefined
 
 scalar Void
 
-type Message {
-  data: String!
+type File {
+  filename: String!
+  mimetype: String!
+  encoding: String!
 }
 
 type User {
   username: String!
 }
 
-scalar Demo
-
 type Query {
   getUser: User!
 }
 
-type Subscription {
-  myMessages: Message!
+type Mutation {
+  upload(file: Upload!): File!
 }

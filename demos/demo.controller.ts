@@ -1,6 +1,7 @@
 import { Controller } from "@nger/core";
-import { Query, Subscription } from '../packages/core/lib/index'
+import { Query, Subscription, Upload, File } from '../packages/core/lib/index'
 import { PubSub } from 'graphql-subscriptions'
+import { Mutation, Args } from "../packages/core/dist/@nger/graphql/lib";
 const pubsub = new PubSub()
 interface User {
     username: string;
@@ -12,18 +13,9 @@ interface Message {
 @Controller()
 export class DemoController {
 
-    @Subscription()
-    myMessages(): AsyncIterator<Message> {
-        let i = 0;
-        setInterval(() => {
-            i += 1;
-            pubsub.publish(`myMessages`, {
-                myMessages: {
-                    data: `${i}`
-                }
-            })
-        }, 1000)
-        return pubsub.asyncIterator([`myMessages`])
+    @Mutation()
+    async upload(@Args('file') file: Upload): Promise<File> {
+        return await file;
     }
 
     @Query()

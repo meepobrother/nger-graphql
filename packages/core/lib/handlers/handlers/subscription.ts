@@ -35,7 +35,6 @@ function handler(
           mergeInfo: MergeInfo;
         }
       ) => {
-        console.log(`subscribe`)
         const _injector = createInjector(injector, source, info, args, context)
         const result = nger.create(_injector)[it.property]()
         return createAsyncIterator(result, (value: any) => {

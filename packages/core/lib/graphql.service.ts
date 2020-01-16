@@ -1,7 +1,6 @@
 import { Injectable, Injector } from '@nger/core';
 import { graphql } from 'graphql';
 import { SchemaBuilder } from './core';
-
 @Injectable()
 export class GraphqlService {
     constructor(private schemaBuilder: SchemaBuilder, private injector: Injector) { }

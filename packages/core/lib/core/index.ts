@@ -18,3 +18,9 @@ export type Empty = any;
 export interface ObjectLiteral {
     [key: string]: any;
 }
+export interface File {
+    filename: string;
+    mimetype: string;
+    encoding: string;
+} 
+export type Upload = Promise<File>;
