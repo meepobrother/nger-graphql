@@ -5,7 +5,6 @@ import {
   createParameterDecorator,
   IParameterDecorator,
   createClassDecorator,
-  IClassDecorator,
   createPropertyDecorator,
   IPropertyDecorator
 } from "@nger/decorator";
@@ -17,6 +16,7 @@ export interface DirectiveOptions {
 export const Directive = createClassDecorator<
   DirectiveOptions | string | InjectionToken<string>
 >(DirectiveMetadataKey);
+
 
 export const ScalarMetadataKey = `ScalarMetadataKey`;
 export interface ScalarOptions {
@@ -73,6 +73,19 @@ export const Args = createParameterDecorator<
     };
   }
 });
+
+export const InfoMetadataKey = `InfoMetadataKey`
+export interface InfoOptions { }
+export const Info = createParameterDecorator<InfoOptions>(InfoMetadataKey)
+
+export const TreeMetadataKey = `TreeMetadataKey`
+export interface TreeOptions { }
+export const Tree = createParameterDecorator<InfoOptions>(TreeMetadataKey)
+
+export const SourceMetadataKey = `TreeMetadataKey`
+export interface SourceOptions { }
+export const Source = createParameterDecorator<SourceOptions>(SourceMetadataKey)
+
 export interface ResolvePropertyOptions {
   path: string | InjectionToken<string>
 }

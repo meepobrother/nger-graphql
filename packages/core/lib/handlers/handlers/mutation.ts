@@ -1,10 +1,11 @@
-import { MUTATION_RESOLVER, SOURCE, INFO, ARGS, CONTEXT } from "../tokens";
+import { MUTATION_RESOLVER } from "../tokens";
 import { IFieldResolver, MergeInfo } from "../types";
 import { MutationMetadataKey, MutationOptions } from "../../decorators";
 import { StaticProvider, Injector, InjectionToken } from "@nger/di";
 import { IMethodDecorator, IClassDecorator } from "@nger/decorator";
 import { GraphQLResolveInfo } from "graphql";
 import { ControllerOptions, NgerRef } from "@nger/core";
+import { createInjector } from "./util";
 export const mutationProvicer: StaticProvider = {
   provide: MutationMetadataKey,
   useValue: handler
@@ -30,24 +31,7 @@ function handler(
         mergeInfo: MergeInfo;
       }
     ) => {
-      const _injector = injector.create([
-        {
-          provide: SOURCE,
-          useValue: source
-        },
-        {
-          provide: INFO,
-          useValue: info
-        },
-        {
-          provide: ARGS,
-          useValue: args
-        },
-        {
-          provide: CONTEXT,
-          useValue: context
-        }
-      ]);
+      const _injector = createInjector(injector, source, info, args, context)
       const instance = nger.create(_injector)
       return instance[it.property]();
     };

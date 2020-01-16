@@ -4,6 +4,7 @@ import { resolvers } from "./handlers/resolver";
 import { DevSchemaBuilder } from "./devSchemaBuilder";
 import { GraphqlService } from "./graphql.service";
 import { AnyScalar, BigIntScalar, DateScalar, EmailScalar, Ipv4Scalar, Ipv6Scalar, MobileScalar, ObjectScalar, URLScalar, ObjectLiteralScalar, EmptyScalar, FloatScalar, UndefinedScalar, VoidScalar } from "./scalars";
+import { AUTHENTICATION, Authentication } from "./handlers/tokens";
 export interface ServerCloud {
   name: string;
   url: string;
@@ -36,13 +37,13 @@ export interface ServerCloud {
   ]
 })
 export class GraphqlModule {
-  static forRoot(cls: Type<SchemaBuilder>): ModuleWithProviders {
+  static forRoot(authentication: Authentication): ModuleWithProviders {
     return {
       ngModule: GraphqlModule,
       providers: [
         {
-          provide: SchemaBuilder,
-          useClass: cls
+          provide: AUTHENTICATION,
+          useValue: authentication
         }
       ]
     };

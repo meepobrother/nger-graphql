@@ -1,4 +1,4 @@
-import { QUERY_RESOLVER, SOURCE, INFO, ARGS, CONTEXT } from "../tokens";
+import { QUERY_RESOLVER } from "../tokens";
 import { IFieldResolver, MergeInfo } from "../types";
 import { QueryMetadataKey, QueryOptions } from "../../decorators";
 
@@ -6,6 +6,7 @@ import { StaticProvider, Injector, InjectionToken, NgerRef } from "@nger/di";
 import { IMethodDecorator, IClassDecorator } from "@nger/decorator";
 import { GraphQLResolveInfo } from "graphql";
 import { ControllerOptions } from "@nger/core";
+import { createInjector } from "./util";
 
 export const queryProvicer: StaticProvider = {
   provide: QueryMetadataKey,
@@ -33,24 +34,7 @@ function handler(
         mergeInfo: MergeInfo;
       }
     ) => {
-      const _injector = injector.create([
-        {
-          provide: SOURCE,
-          useValue: source
-        },
-        {
-          provide: INFO,
-          useValue: info
-        },
-        {
-          provide: ARGS,
-          useValue: args
-        },
-        {
-          provide: CONTEXT,
-          useValue: context
-        }
-      ]);
+      const _injector = createInjector(injector, source, info, args, context)
       return nger.create(_injector)[it.property]()
     };
     root.setStatic([

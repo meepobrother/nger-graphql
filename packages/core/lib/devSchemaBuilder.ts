@@ -5,6 +5,7 @@ import { readFileSync, writeFileSync, existsSync } from 'fs'
 import { DocumentNode, parse, GraphQLSchema } from "graphql";
 import { extname, join, dirname } from 'path'
 import { buildFederatedSchema } from '@apollo/federation'
+import { PubSub } from 'graphql-subscriptions'
 export function getTsconfig(path: string) {
     const dir = join(path, 'tsconfig.json')
     if (existsSync(dir) || existsSync(join(path, 'package.json'))) return dir;
@@ -32,7 +33,7 @@ export class DevSchemaBuilder extends SchemaBuilder {
         const resolver = this.injector.get(RESOLVER)
         this._schema = buildFederatedSchema({
             typeDefs: [ast],
-            resolvers: resolver.resolvers
+            resolvers: resolver
         });
         return this._schema;
     }
@@ -40,9 +41,11 @@ export class DevSchemaBuilder extends SchemaBuilder {
         return undefined;
     }
     async buildContext(): Promise<any> {
-        return ({ req, res }) => ({
-            req, res
-        })
+        return ({ req, res }) => {
+            return {
+                req, res, pubsub: new PubSub()
+            }
+        }
     }
     async buildApollo<T>(): Promise<T> {
         return {

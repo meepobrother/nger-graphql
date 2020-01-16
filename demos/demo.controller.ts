@@ -1,5 +1,5 @@
 import { Controller } from "@nger/core";
-import { Query, Subscription } from '@nger/graphql'
+import { Query, Subscription } from '../packages/core/lib/index'
 import { PubSub } from 'graphql-subscriptions'
 const pubsub = new PubSub()
 interface User {

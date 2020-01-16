@@ -1,3 +1,35 @@
+scalar _Any
+scalar _FieldSet
+union _Entity
+type _Service
+scalar Any
+
+scalar BigInt
+
+scalar Date
+
+scalar Email
+
+scalar Ipv4
+
+scalar Ipv6
+
+scalar Mobile
+
+scalar Object
+
+scalar URL
+
+scalar ObjectLiteral
+
+scalar Empty
+
+scalar Float
+
+scalar Undefined
+
+scalar Void
+
 type Message {
   data: String!
 }
@@ -5,6 +37,8 @@ type Message {
 type User {
   username: String!
 }
+
+scalar Demo
 
 type Query {
   getUser: User!

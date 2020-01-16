@@ -1,14 +1,11 @@
 import { NgModule } from '@nger/core'
 import { DemoModule } from './demo.module';
-import { GraphqlModule } from '@nger/graphql';
-import { join } from 'path';
-import { ApolloExpressModule } from '@nger/apollo-express'
+import { GraphqlModule } from '../packages/core/lib/index';
 import { ServerModule } from '@nger/server'
 @NgModule({
     imports: [
         ServerModule,
-        ApolloExpressModule,
-        GraphqlModule.forRoot(join(__dirname, 'main.ts')),
+        GraphqlModule,
         DemoModule
     ],
     providers: []
