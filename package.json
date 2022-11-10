@@ -5,7 +5,7 @@
         "start": "ts-node -r tsconfig-paths/register packages/core/__tests__/core/index.ts"
     },
     "devDependencies": {
-        "electron": "^7.1.9",
+        "electron": "^18.3.7",
         "lerna": "^3.20.2"
     },
     "dependencies": {
